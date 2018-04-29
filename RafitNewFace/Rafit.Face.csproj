@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC56161C-0E93-459F-950C-95E29D92C8E5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Rafit.Face</RootNamespace>
+    <AssemblyName>Rafit.Face</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video, Version=2.1.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.1.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Rafit.BL">
+      <HintPath>..\Librerias\Rafit.BL.dll</HintPath>
+    </Reference>
+    <Reference Include="Rafit.DAL">
+      <HintPath>..\Librerias\Rafit.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="frmCargandoEnviarMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCargandoEnviarMensaje.Designer.cs">
+      <DependentUpon>frmCargandoEnviarMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEscogerAvatar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEscogerAvatar.Designer.cs">
+      <DependentUpon>frmEscogerAvatar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dispositivos.cs" />
+    <Compile Include="Effectos.cs" />
+    <Compile Include="frmEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEventos.Designer.cs">
+      <DependentUpon>frmEventos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStep2Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStep2Facturacion.Designer.cs">
+      <DependentUpon>frmStep2Facturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompartir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompartir.Designer.cs">
+      <DependentUpon>frmCompartir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearMediosPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearMediosPago.Designer.cs">
+      <DependentUpon>frmCrearMediosPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStep3DetalleFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStep3DetalleFactura.Designer.cs">
+      <DependentUpon>frmStep3DetalleFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearEvento.Designer.cs">
+      <DependentUpon>frmCrearEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStep4MedioPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStep4MedioPago.Designer.cs">
+      <DependentUpon>frmStep4MedioPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearMembresia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearMembresia.Designer.cs">
+      <DependentUpon>frmCrearMembresia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frrmMasterStepFan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frrmMasterStepFan.Designer.cs">
+      <DependentUpon>frrmMasterStepFan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStep1CrearFan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStep1CrearFan.Designer.cs">
+      <DependentUpon>frmStep1CrearFan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearUsuario.Designer.cs">
+      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListartAfiliados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListartAfiliados.Designer.cs">
+      <DependentUpon>frmListartAfiliados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarUsuarios.Designer.cs">
+      <DependentUpon>frmListarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFlotListarAfiliados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlotListarAfiliados.Designer.cs">
+      <DependentUpon>frmFlotListarAfiliados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFlotListarPromo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlotListarPromo.Designer.cs">
+      <DependentUpon>frmFlotListarPromo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuPral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPral.Designer.cs">
+      <DependentUpon>frmMenuPral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFlotListarModulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlotListarModulos.Designer.cs">
+      <DependentUpon>frmFlotListarModulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmVisorImagenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisorImagenes.Designer.cs">
+      <DependentUpon>frmVisorImagenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisorCamara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisorCamara.Designer.cs">
+      <DependentUpon>frmVisorCamara.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmCargandoEnviarMensaje.resx">
+      <DependentUpon>frmCargandoEnviarMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEscogerAvatar.resx">
+      <DependentUpon>frmEscogerAvatar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventos.resx">
+      <DependentUpon>frmEventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStep2Facturacion.resx">
+      <DependentUpon>frmStep2Facturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompartir.resx">
+      <DependentUpon>frmCompartir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearMediosPago.resx">
+      <DependentUpon>frmCrearMediosPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStep3DetalleFactura.resx">
+      <DependentUpon>frmStep3DetalleFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearEvento.resx">
+      <DependentUpon>frmCrearEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStep4MedioPago.resx">
+      <DependentUpon>frmStep4MedioPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearMembresia.resx">
+      <DependentUpon>frmCrearMembresia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frrmMasterStepFan.resx">
+      <DependentUpon>frrmMasterStepFan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStep1CrearFan.resx">
+      <DependentUpon>frmStep1CrearFan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearUsuario.resx">
+      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListartAfiliados.resx">
+      <DependentUpon>frmListartAfiliados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarUsuarios.resx">
+      <DependentUpon>frmListarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFlotListarAfiliados.resx">
+      <DependentUpon>frmFlotListarAfiliados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFlotListarPromo.resx">
+      <DependentUpon>frmFlotListarPromo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPral.resx">
+      <DependentUpon>frmMenuPral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFlotListarModulos.resx">
+      <DependentUpon>frmFlotListarModulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="frmVisorImagenes.resx">
+      <DependentUpon>frmVisorImagenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisorCamara.resx">
+      <DependentUpon>frmVisorCamara.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono ra fit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\commlawnbkgd3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\051-profits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton Transparente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_triangulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backgrun Reducido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_arrow_back_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Back_To_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Next_page_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\commlawnbkgd3 - Espejo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Eye_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Edit_Row_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Delete_View_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Expand_Arrow_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Add_User_Male_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masthead_frame_1356880563.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\commlawnbkgd3 - Espejo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masthead_frame_13568805631.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Message_50px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Attention_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Advertising_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Search_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Edit_Property_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Plus_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Delete_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG-20160117-WA0040.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Vintage_Camera_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Vintage_Camera_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Down_Button_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Go_Back_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Slide_Up_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Gold_Medal_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Medal_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Medal_First_Place_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Medal_Second_Place_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Medal_Third_Place_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Silver_Medal_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Gold_Medal_96px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Circulo sombra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486164461-send_79678.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Unsplash_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Settings_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red-x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Ok_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Share_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Search_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cargando.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mensaje Enviado.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Check_All_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Uncheck_All_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Correcto.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Blanco Barba 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Blanco Barba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Bussines Man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Girl Cabello Corto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Man Cabello Corto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Man Joven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Man Mature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Men Bussiness 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar Negro Barba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar User Geek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono ra fit 83.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nada en esta Lista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nada en esta Lista 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp08356e36_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp08356e36_061.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen no Encontrada.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCopy "$(TargetPath)" "$(SolutionDir)Librerias" /y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
